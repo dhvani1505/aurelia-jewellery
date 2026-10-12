@@ -1,0 +1,1348 @@
+/* =========================================================
+   AURELIA JEWELLERY - ADMIN PAGES
+   ========================================================= */
+
+:root {
+  --admin-bg: #faf8f4;
+  --admin-card: #ffffff;
+  --admin-black: #171513;
+  --admin-text: #24211e;
+  --admin-muted: #7d766e;
+  --admin-gold: #b08d57;
+  --admin-border: #e5e0d8;
+  --admin-soft: #f3efe8;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.admin-page {
+  min-height: calc(100vh - 104px);
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  padding: 42px 48px 70px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-header {
+  max-width: 1450px;
+  margin: 0 auto 34px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.admin-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--admin-gold);
+  margin-bottom: 8px;
+}
+
+.admin-title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--admin-black);
+}
+
+.admin-subtitle {
+  margin-top: 10px;
+
+  font-size: 14px;
+  color: #77716a;
+}
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-btn {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border: 1px solid var(--admin-black);
+  background: transparent;
+
+  color: var(--admin-black);
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-btn:hover {
+  background: var(--admin-black);
+  color: white;
+}
+
+.admin-btn-primary {
+  background: var(--admin-black);
+  color: white;
+}
+
+.admin-btn-primary:hover {
+  background: var(--admin-gold);
+  border-color: var(--admin-gold);
+}
+
+/* =========================================================
+   MANAGEMENT NAVIGATION
+   ========================================================= */
+
+.admin-management {
+  max-width: 1450px;
+  margin: 0 auto 38px;
+}
+
+.admin-management-label {
+  margin-bottom: 12px;
+
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  color: var(--admin-gold);
+}
+
+.admin-management-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.admin-management-card {
+  min-height: 82px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+
+  color: var(--admin-black);
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-management-card:hover {
+  border-color: var(--admin-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(23, 21, 19, 0.06);
+}
+
+.admin-management-card.active {
+  border-color: var(--admin-gold);
+  background: #fdfbf7;
+}
+
+.admin-management-type {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--admin-muted);
+}
+
+.admin-management-title {
+  margin-top: 6px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.admin-section {
+  max-width: 1450px;
+  margin: 0 auto 34px;
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.admin-section-heading {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+
+  color: var(--admin-black);
+}
+
+.admin-section-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--admin-gold);
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.admin-stats {
+  max-width: 1450px;
+  margin: 0 auto 38px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.admin-stat-card {
+  position: relative;
+
+  min-height: 150px;
+
+  padding: 22px;
+
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-stat-card:hover {
+  border-color: #d1c1a7;
+  box-shadow: 0 10px 30px rgba(23, 21, 19, 0.05);
+}
+
+.admin-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-stat-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--admin-muted);
+}
+
+.admin-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--admin-border);
+
+  color: var(--admin-gold);
+}
+
+.admin-stat-value {
+  margin-top: 22px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 35px;
+  font-weight: 400;
+
+  color: var(--admin-black);
+}
+
+.admin-stat-link {
+  margin-top: 7px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--admin-muted);
+  text-decoration: none;
+}
+
+.admin-stat-link:hover {
+  color: var(--admin-gold);
+}
+
+/* =========================================================
+   ALERT STAT
+   ========================================================= */
+
+.admin-stat-card.warning {
+  border-color: #d5b47a;
+}
+
+.admin-stat-card.warning .admin-stat-icon {
+  border-color: #d5b47a;
+  color: var(--admin-gold);
+}
+
+/* =========================================================
+   LOWER CONTENT
+   ========================================================= */
+
+.admin-content-grid {
+  max-width: 1450px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+}
+
+.admin-panel {
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+}
+
+.admin-panel-header {
+  min-height: 62px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-panel-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+
+  color: var(--admin-black);
+}
+
+.admin-panel-link {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--admin-black);
+  text-decoration: none;
+}
+
+.admin-panel-link:hover {
+  color: var(--admin-gold);
+}
+
+/* =========================================================
+   ORDER ROW
+   ========================================================= */
+
+.admin-order-row {
+  min-height: 76px;
+
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-order-row:last-child {
+  border-bottom: none;
+}
+
+.admin-order-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-order-number {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-black);
+}
+
+.admin-order-customer {
+  font-size: 12px;
+  color: var(--admin-muted);
+}
+
+.admin-order-date {
+  font-size: 11px;
+  color: #aaa29a;
+}
+
+.admin-order-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+}
+
+.admin-order-amount {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  color: var(--admin-black);
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.admin-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border: 1px solid #ddd5c8;
+
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--admin-gold);
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.admin-empty {
+  min-height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: var(--admin-muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .admin-page {
+    padding: 32px 28px 60px;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-management-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-page {
+    padding: 25px 16px 50px;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-title {
+    font-size: 34px;
+  }
+
+  .admin-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header-actions {
+    width: 100%;
+  }
+
+  .admin-btn {
+    flex: 1;
+  }
+}
+/* =========================================================
+   AURELIA ADMIN PAGES
+========================================================= */
+
+.admin-content-page {
+  width: 100%;
+  min-height: calc(100vh - 85px);
+  padding: 34px 36px 60px;
+  background: #f8f6f1;
+  color: #171514;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.admin-page-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.admin-page-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #a77b3d;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.admin-page-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #171514;
+}
+
+.admin-page-description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #77716b;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.admin-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  border: 1px solid #171514;
+  background: #171514;
+  color: #ffffff;
+
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-primary-button:hover {
+  background: #a77b3d;
+  border-color: #a77b3d;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.admin-products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 60px;
+
+  padding: 10px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e4dfd7;
+
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.admin-search-box {
+  width: 360px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #77716b;
+}
+
+.admin-search-box svg {
+  flex-shrink: 0;
+}
+
+.admin-search-box input {
+  width: 100%;
+  height: 38px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #171514;
+}
+
+.admin-search-box input::placeholder {
+  color: #9b958e;
+}
+
+.admin-product-count {
+  font-size: 12px;
+  color: #8b847c;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   PRODUCTS CONTAINER
+========================================================= */
+
+.admin-products-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e4dfd7;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   PRODUCTS TABLE
+========================================================= */
+
+.admin-products-table {
+  width: 100%;
+  min-width: 900px;
+}
+
+
+/* TABLE HEADER */
+
+.admin-products-table-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 2.2fr)
+    minmax(130px, 1fr)
+    minmax(120px, 0.8fr)
+    minmax(80px, 0.6fr)
+    minmax(120px, 0.8fr)
+    minmax(100px, 0.7fr);
+
+  align-items: center;
+
+  min-height: 52px;
+
+  padding: 0 20px;
+
+  background: #f4f1eb;
+  border-bottom: 1px solid #ded8cf;
+
+  box-sizing: border-box;
+
+  color: #81776c;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+
+/* TABLE ROW */
+
+.admin-product-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 2.2fr)
+    minmax(130px, 1fr)
+    minmax(120px, 0.8fr)
+    minmax(80px, 0.6fr)
+    minmax(120px, 0.8fr)
+    minmax(100px, 0.7fr);
+
+  align-items: center;
+
+  min-height: 92px;
+
+  padding: 12px 20px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #ebe7e1;
+
+  box-sizing: border-box;
+
+  font-size: 13px;
+  color: #403b37;
+
+  transition: background 0.2s ease;
+}
+
+.admin-product-row:last-child {
+  border-bottom: none;
+}
+
+.admin-product-row:hover {
+  background: #fbfaf7;
+}
+
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.admin-product-name {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-product-image {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f4f1eb;
+  border: 1px solid #e2ddd5;
+
+  color: #a77b3d;
+
+  overflow: hidden;
+}
+
+.admin-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.admin-product-name > div:last-child {
+  min-width: 0;
+}
+
+.admin-product-name strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #171514;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-product-name span {
+  display: block;
+
+  max-width: 300px;
+
+  color: #8b847d;
+
+  font-size: 11px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.admin-product-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #171514;
+}
+
+
+/* =========================================================
+   STOCK STATUS
+========================================================= */
+
+.admin-stock-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 2px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.admin-stock-status.in-stock {
+  color: #55704e;
+  background: #eef4eb;
+  border: 1px solid #d7e5d2;
+}
+
+.admin-stock-status.out-stock {
+  color: #9a4c43;
+  background: #f8eeee;
+  border: 1px solid #edd8d5;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.admin-product-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-product-actions button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ded8cf;
+  background: #ffffff;
+
+  color: #55504b;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.admin-product-actions button:hover {
+  border-color: #a77b3d;
+  color: #a77b3d;
+  background: #fbf8f2;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.admin-empty-state {
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  text-align: center;
+
+  color: #8b847d;
+}
+
+.admin-empty-state svg {
+  margin-bottom: 14px;
+  color: #a77b3d;
+}
+
+.admin-empty-state h3 {
+  margin: 0 0 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+
+  color: #171514;
+}
+
+.admin-empty-state p {
+  margin: 0;
+
+  font-size: 13px;
+  color: #8b847d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-content-page {
+    padding: 25px 20px 50px;
+  }
+
+  .admin-page-title {
+    font-size: 34px;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-products-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .admin-search-box {
+    width: 100%;
+  }
+
+  .admin-products-container {
+    overflow-x: auto;
+  }
+}
+
+/* =========================================
+   ADMIN CONTENT PAGE
+========================================= */
+
+.admin-content-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 34px 38px 60px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.admin-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.admin-page-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b48745;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.admin-page-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #171513;
+  line-height: 1.1;
+}
+
+.admin-page-description {
+  margin: 10px 0 0;
+  color: #716b64;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   HEADER BUTTONS
+========================================= */
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-primary-button,
+.admin-secondary-button {
+  height: 40px;
+  padding: 0 17px;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.admin-primary-button {
+  border: 1px solid #171513;
+  background: #171513;
+  color: #fff;
+}
+
+.admin-primary-button:hover {
+  background: #b48745;
+  border-color: #b48745;
+}
+
+.admin-secondary-button {
+  border: 1px solid #d8d2ca;
+  background: #fff;
+  color: #171513;
+}
+
+.admin-secondary-button:hover {
+  border-color: #171513;
+}
+
+
+/* =========================================
+   TABLE CARD
+========================================= */
+
+.admin-table-card {
+  background: #fff;
+  border: 1px solid #e4dfd8;
+  width: 100%;
+}
+
+.admin-table-header {
+  min-height: 86px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e7e2db;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.admin-table-header h2 {
+  margin: 3px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #171513;
+}
+
+.admin-count {
+  color: #716b64;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CATEGORY LIST
+========================================= */
+
+.admin-category-list {
+  width: 100%;
+}
+
+.admin-category-row {
+  min-height: 82px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #ece7e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.admin-category-row:last-child {
+  border-bottom: none;
+}
+
+.admin-category-row:hover {
+  background: #faf8f5;
+}
+
+.admin-category-info {
+  min-width: 0;
+}
+
+.admin-category-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  color: #171513;
+  margin-bottom: 5px;
+}
+
+.admin-category-slug {
+  color: #8b837a;
+  font-size: 12px;
+}
+
+.admin-category-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* =========================================
+   ICON BUTTONS
+========================================= */
+
+.admin-icon-button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ddd7cf;
+  background: #fff;
+  color: #4d4842;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-icon-button:hover {
+  background: #171513;
+  border-color: #171513;
+  color: #fff;
+}
+
+.admin-delete-button:hover {
+  background: #9b3f3f;
+  border-color: #9b3f3f;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.admin-form-card {
+  background: #fff;
+  border: 1px solid #e4dfd8;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.admin-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-form-header h2 {
+  margin: 4px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.admin-close-button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ddd7cf;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-close-button:hover {
+  background: #171513;
+  color: #fff;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-field label {
+  font-size: 12px;
+  color: #514b45;
+  letter-spacing: 0.4px;
+}
+
+.admin-field input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d8d2ca;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+.admin-field input:focus {
+  border-color: #b48745;
+}
+
+.admin-form-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-empty-state {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #766f67;
+  text-align: center;
+  padding: 30px;
+}
+
+.admin-empty-state h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #171513;
+}
+
+.admin-empty-state p {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .admin-content-page {
+    padding: 25px 20px 50px;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+  }
+
+  .admin-header-actions {
+    width: 100%;
+  }
+
+  .admin-header-actions button {
+    flex: 1;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-title {
+    font-size: 34px;
+  }
+}

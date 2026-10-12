@@ -1,0 +1,845 @@
+/* =========================================================
+   AURELIA JEWELLERY
+   ADMIN PANEL
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  --aurelia-black: #171513;
+  --aurelia-cream: #faf8f4;
+  --aurelia-white: #ffffff;
+  --aurelia-gold: #b08d57;
+  --aurelia-gold-light: #d2b27a;
+  --aurelia-border: rgba(23, 21, 19, 0.10);
+  --aurelia-muted: #77716a;
+  --aurelia-danger: #9d3939;
+  --aurelia-success: #3e7255;
+
+  --font-body: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--aurelia-cream);
+  color: var(--aurelia-black);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ADMIN PAGE
+   ========================================================= */
+
+.admin-page {
+  min-height: calc(100vh - 104px);
+  background: var(--aurelia-cream);
+  padding: 42px 48px 70px;
+}
+
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   ADMIN HEADER
+   ========================================================= */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.admin-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--aurelia-gold);
+  margin-bottom: 9px;
+}
+
+.admin-title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.admin-subtitle {
+  margin: 9px 0 0;
+  color: var(--aurelia-muted);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ADMIN ACTIONS
+   ========================================================= */
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-btn {
+  height: 42px;
+  padding: 0 18px;
+
+  border: 1px solid var(--aurelia-black);
+  background: var(--aurelia-black);
+  color: white;
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-btn:hover {
+  background: var(--aurelia-gold);
+  border-color: var(--aurelia-gold);
+}
+
+.admin-btn.secondary {
+  background: transparent;
+  color: var(--aurelia-black);
+  border-color: var(--aurelia-border);
+}
+
+.admin-btn.secondary:hover {
+  background: var(--aurelia-black);
+  color: white;
+  border-color: var(--aurelia-black);
+}
+
+.admin-btn.danger {
+  background: transparent;
+  color: var(--aurelia-danger);
+  border-color: rgba(157, 57, 57, 0.3);
+}
+
+.admin-btn.danger:hover {
+  background: var(--aurelia-danger);
+  color: white;
+}
+
+
+/* =========================================================
+   ADMIN NAVIGATION
+   ========================================================= */
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--aurelia-border);
+  border-bottom: 1px solid var(--aurelia-border);
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.admin-nav a {
+  position: relative;
+
+  padding: 17px 24px;
+
+  color: var(--aurelia-muted);
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.admin-nav a:hover {
+  color: var(--aurelia-black);
+}
+
+.admin-nav a.active {
+  color: var(--aurelia-black);
+}
+
+.admin-nav a.active::after {
+  content: "";
+
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: -1px;
+
+  height: 2px;
+  background: var(--aurelia-gold);
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.admin-stat-card {
+  background: var(--aurelia-white);
+  border: 1px solid var(--aurelia-border);
+
+  padding: 25px;
+
+  min-height: 145px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(23, 21, 19, 0.06);
+}
+
+.admin-stat-label {
+  color: var(--aurelia-muted);
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  margin-bottom: 18px;
+}
+
+.admin-stat-value {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.admin-stat-link {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--aurelia-gold);
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.admin-stat-link:hover {
+  color: var(--aurelia-black);
+}
+
+
+/* =========================================================
+   ADMIN SECTION
+   ========================================================= */
+
+.admin-section {
+  margin-top: 32px;
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.admin-section-title {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.admin-section-label {
+  font-size: 9px;
+  color: var(--aurelia-gold);
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ADMIN PANEL
+   ========================================================= */
+
+.admin-panel {
+  background: var(--aurelia-white);
+  border: 1px solid var(--aurelia-border);
+}
+
+.admin-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid var(--aurelia-border);
+}
+
+.admin-panel-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+.admin-table thead {
+  background: #f7f4ef;
+}
+
+.admin-table th {
+  padding: 15px 20px;
+
+  color: var(--aurelia-muted);
+
+  text-align: left;
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--aurelia-border);
+}
+
+.admin-table td {
+  padding: 18px 20px;
+
+  border-bottom: 1px solid var(--aurelia-border);
+
+  font-size: 13px;
+  color: var(--aurelia-black);
+
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: #fcfaf7;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.admin-product {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-product-image {
+  width: 54px;
+  height: 54px;
+
+  object-fit: cover;
+
+  background: #f2eee8;
+}
+
+.admin-product-name {
+  font-weight: 500;
+}
+
+.admin-product-meta {
+  color: var(--aurelia-muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border: 1px solid var(--aurelia-border);
+
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-badge.active {
+  color: var(--aurelia-success);
+  border-color: rgba(62, 114, 85, 0.25);
+  background: rgba(62, 114, 85, 0.05);
+}
+
+.admin-badge.inactive {
+  color: var(--aurelia-danger);
+  border-color: rgba(157, 57, 57, 0.25);
+  background: rgba(157, 57, 57, 0.05);
+}
+
+.admin-badge.gold {
+  color: var(--aurelia-gold);
+  border-color: rgba(176, 141, 87, 0.3);
+  background: rgba(176, 141, 87, 0.06);
+}
+
+
+/* =========================================================
+   TABLE ACTIONS
+   ========================================================= */
+
+.admin-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-icon-btn {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--aurelia-border);
+  background: white;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.admin-icon-btn:hover {
+  border-color: var(--aurelia-gold);
+  color: var(--aurelia-gold);
+}
+
+.admin-icon-btn.delete:hover {
+  border-color: var(--aurelia-danger);
+  color: var(--aurelia-danger);
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.admin-form {
+  background: white;
+  border: 1px solid var(--aurelia-border);
+  padding: 30px;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-form-group.full {
+  grid-column: 1 / -1;
+}
+
+.admin-form-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--aurelia-muted);
+}
+
+.admin-input,
+.admin-select,
+.admin-textarea {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 11px 13px;
+
+  background: #fff;
+  color: var(--aurelia-black);
+
+  border: 1px solid rgba(23, 21, 19, 0.15);
+
+  outline: none;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-input:focus,
+.admin-select:focus,
+.admin-textarea:focus {
+  border-color: var(--aurelia-gold);
+  box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.08);
+}
+
+.admin-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(23, 21, 19, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.admin-modal {
+  width: min(680px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: var(--aurelia-cream);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+}
+
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 28px;
+
+  border-bottom: 1px solid var(--aurelia-border);
+}
+
+.admin-modal-title {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.admin-modal-body {
+  padding: 28px;
+}
+
+.admin-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 20px 28px;
+
+  border-top: 1px solid var(--aurelia-border);
+}
+
+
+/* =========================================================
+   STATUS / ALERT
+   ========================================================= */
+
+.admin-alert {
+  padding: 12px 16px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid var(--aurelia-border);
+
+  font-size: 12px;
+}
+
+.admin-alert.success {
+  color: var(--aurelia-success);
+  background: rgba(62, 114, 85, 0.05);
+  border-color: rgba(62, 114, 85, 0.2);
+}
+
+.admin-alert.error {
+  color: var(--aurelia-danger);
+  background: rgba(157, 57, 57, 0.05);
+  border-color: rgba(157, 57, 57, 0.2);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.admin-empty {
+  padding: 60px 30px;
+
+  text-align: center;
+
+  color: var(--aurelia-muted);
+}
+
+.admin-empty-title {
+  font-family: var(--font-display);
+  color: var(--aurelia-black);
+
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.admin-empty-text {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.admin-loading {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--aurelia-muted);
+
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.admin-status-select {
+  min-width: 130px;
+
+  padding: 8px 10px;
+
+  border: 1px solid var(--aurelia-border);
+
+  background: white;
+
+  color: var(--aurelia-black);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.admin-status-select:focus {
+  border-color: var(--aurelia-gold);
+}
+
+
+/* =========================================================
+   DASHBOARD LOWER GRID
+   ========================================================= */
+
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .admin-page {
+    padding: 32px 25px 60px;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-page {
+    padding: 25px 16px 50px;
+  }
+
+  .admin-title {
+    font-size: 34px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form {
+    padding: 20px;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-group.full {
+    grid-column: auto;
+  }
+
+  .admin-panel-header {
+    padding: 18px;
+  }
+
+  .admin-modal-body {
+    padding: 20px;
+  }
+
+  .admin-modal-header {
+    padding: 20px;
+  }
+
+  .admin-modal-footer {
+    padding: 18px 20px;
+  }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--aurelia-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9bda9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aurelia-gold);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--aurelia-gold);
+  color: white;
+}
