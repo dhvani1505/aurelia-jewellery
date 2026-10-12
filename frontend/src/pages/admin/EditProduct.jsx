@@ -5,7 +5,9 @@ import { ArrowLeft, Save } from "lucide-react";
 import api from "../../api";
 import "../AdminPages.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/api\/?$/, "");
 
 const initialForm = {
   categoryId: "",
